@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resources — GMU BCA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <script>
+        try{ if(!localStorage.getItem('gmu-user')) window.location.href='login.html'; }catch(e){}
+      </script>
+      <div class="logo-title"><a href="index.html"><img src="images/gmulogo1.png" alt="GMU" class="logo"></a><h1>Resources</h1></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- About link removed -->
+          <li><a href="courses.html">Courses</a></li>
+          <!-- Course link removed -->
+          <!-- Features link removed -->
+          <li><a href="resources.html" class="active">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Student Portal</a></li>
+          <li><a href="faculty-admin.html" class="btn" style="margin-left:6px">Faculty Admin</a></li>
+          <li><a href="admin.html" class="btn" style="display:none;margin-left:6px">Admin Panel</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Signup</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Digital Library & Study Materials</h2>
+    <div class="widget">
+      <p>Access lecture notes, past question papers and PDFs uploaded by faculty.</p>
+      <ul>
+        <li><a href="#">Lecture Notes - Web Development</a></li>
+        <li><a href="#">Past Papers - Database Management</a></li>
+        <li><a href="#">Sample Projects and Templates</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container"><p>&copy; <span id="footer-year"></span> GM University BCA</p></div></footer>
+  <script src="scripts.js"></script>
+</body>
+</html>

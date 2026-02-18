@@ -1,0 +1,149 @@
+*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#D4AF37;--primary:#5e1d1d;--muted:#666;--bg:#ffffff}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(180deg,#fafafa,#fff);color:#222;line-height:1.5}
+/* Full-page background image (fallback to gradient). Place an image at images/bg.jpg to use it. */
+html,body{height:100%}
+body{
+	background-image: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url('images/bg.jpg');
+	background-size:cover;
+	background-position:center center;
+	background-attachment:fixed;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.nav{background:var(--primary);box-shadow:0 2px 10px rgba(0,0,0,0.15);position:sticky;top:0;z-index:100}
+.nav .container{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
+.logo-title{display:flex;align-items:center;gap:12px}
+.logo{height:46px;width:auto}
+.nav h1{color:var(--accent);font-size:20px;font-weight:700;margin:0}
+.nav nav{position:static}
+.nav nav ul{list-style:none;display:flex;gap:12px;align-items:center;margin:0;padding:0}
+.nav nav ul li{list-style:none}
+.nav a{display:inline-flex;align-items:center;padding:8px 14px;color:#fff;text-decoration:none;font-weight:600;border-radius:6px;transition:all 0.2s;height:40px}
+.nav a:hover,.nav a.active{background:var(--accent);color:var(--primary)}
+
+/* make any nav link with .btn look like a small CTA */
+.nav a.btn{padding:8px 12px;background:var(--accent);color:var(--primary);font-weight:700;border-radius:6px}
+.nav a.btn:hover{opacity:0.95}
+.hero{background:linear-gradient(135deg,var(--primary),#7a2525);color:#fff;padding:48px 0;margin-bottom:30px;border-bottom:4px solid var(--accent)}
+.hero .hero-inner{display:flex;gap:30px;align-items:center}
+.hero-copy{flex:1}
+.hero-image{max-width:420px;width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+.hero-video{max-width:420px;width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.2);display:block}
+.hero h2{font-size:30px;margin-bottom:8px;text-decoration:none;color:#ffffff}
+/* Ensure any links inside the hero heading are not underlined and inherit color */
+.hero h2 a{ text-decoration:none; color:inherit }
+
+/* Force-remove any text-decoration/underline appearing on hero text */
+.hero h1, .hero h2, .hero h3, .hero p, .hero .lead, .hero .hero-copy * {
+	text-decoration: none !important;
+	text-decoration-line: none !important;
+	text-decoration-thickness: 0 !important;
+	text-underline-offset: 0 !important;
+}
+.lead{font-size:18px;opacity:0.95;color:rgba(255,255,255,0.95)}
+.hero-ctas{margin-top:18px}
+.btn{display:inline-block;background:var(--accent);color:var(--primary);padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:700;margin-right:8px}
+.btn-outline{background:transparent;border:2px solid var(--accent);color:#fff}
+.btn-small{padding:8px 12px;font-size:14px}
+
+.features-grid .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(94,29,29,0.06);transition:transform 0.25s;border:1px solid #f0f0f0}
+.card img{width:100%;height:140px;object-fit:cover}
+.card h4{padding:14px 16px;color:var(--primary)}
+.card p{padding:0 16px 16px;color:var(--muted)}
+
+/* Faculty spotlight */
+.faculty-spotlight .faculty-card{display:flex;gap:18px;align-items:center;background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+.faculty-spotlight .faculty-card img{width:140px;height:140px;object-fit:cover;border-radius:50%;border:4px solid rgba(212,175,55,0.12)}
+.faculty-spotlight .faculty-info h4{margin:0 0 6px;color:var(--primary)}
+.faculty-spotlight .faculty-info .muted{color:var(--muted);margin-bottom:8px}
+.faculty-spotlight .faculty-info p{margin-bottom:10px;color:#444}
+
+@media(max-width:720px){
+	.faculty-spotlight .faculty-card{flex-direction:column;align-items:flex-start}
+	.faculty-spotlight .faculty-card img{width:100px;height:100px}
+}
+
+/* Faculty grid at end of homepage */
+.faculty-grid{margin-top:26px;margin-bottom:26px}
+.faculty-grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;align-items:start}
+.faculty-mini{background:#fff;border-radius:10px;padding:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.faculty-mini img{width:110px;height:110px;object-fit:cover;border-radius:50%;border:3px solid rgba(212,175,55,0.12);margin-bottom:10px}
+.faculty-mini h5{margin:6px 0 4px;color:var(--primary);font-size:16px}
+.faculty-mini .muted{font-size:13px;color:var(--muted);margin-bottom:6px}
+.faculty-mini p{font-size:14px;color:#444}
+
+@media(max-width:520px){
+	.faculty-grid-cards{grid-template-columns:repeat(2,1fr)}
+	.faculty-mini img{width:90px;height:90px}
+}
+
+.latest-posts .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.post-card{display:flex;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.post-card img{width:40%;object-fit:cover}
+.post-body{padding:14px}
+.post-body h4{color:var(--primary);margin-bottom:8px}
+.post-body p{color:var(--muted);margin-bottom:12px}
+
+.posts,.grid{margin-bottom:26px}
+
+.footer{background:var(--primary);color:var(--accent);text-align:center;padding:18px;margin-top:40px;border-top:4px solid var(--accent)}
+
+/* Common utilities used by dashboard and admin pages */
+.layout{display:flex;gap:20px}
+.sidebar{width:260px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 6px 20px rgba(0,0,0,0.06);height:calc(100vh - 120px);position:sticky;top:70px}
+.sidebar a{display:block;padding:10px 12px;color:var(--primary);text-decoration:none;border-radius:6px;margin-bottom:6px}
+.sidebar a:hover{background:#f6f6f6}
+.main-panel{flex:1}
+.widget-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:18px}
+.widget{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+.progress{background:#f1f1f1;border-radius:8px;height:12px;overflow:hidden}
+.progress > i{display:block;height:100%;background:var(--accent)}
+
+/* Course listing */
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.course-card{background:#fff;border-radius:8px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+.course-card .badge{display:inline-block;padding:6px 8px;border-radius:6px;background:#eee;color:var(--primary);font-weight:700;margin-bottom:8px}
+
+/* Forms and auth */
+.auth-card{max-width:520px;margin:24px auto;background:#fff;padding:22px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;margin-bottom:6px;color:var(--primary);font-weight:600}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+input[type=submit]{background:var(--accent);color:var(--primary);padding:10px 14px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+
+/* Responsive */
+@media(max-width:900px){
+	.hero .hero-inner{flex-direction:column}
+	.sidebar{display:none}
+	.layout{flex-direction:column}
+	.nav .container{flex-direction:column;align-items:flex-start}
+	.nav nav{position:static;transform:none;margin-top:10px;width:100%}
+	.nav nav ul{flex-wrap:wrap;justify-content:flex-start}
+	#auth-link{position:static;transform:none;margin-top:8px}
+}
+
+/* Accessibility helpers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Announcement marquee styles */
+.marquee-wrap{background:rgba(94,29,29,0.95);color:var(--accent);}
+.marquee{overflow:hidden;border-top:3px solid var(--accent);border-bottom:3px solid rgba(212,175,55,0.12)}
+.marquee-track{display:flex;gap:28px;white-space:nowrap;padding:10px 20px;align-items:center}
+.marquee-track span{display:inline-block;color:#fff;font-weight:600}
+.marquee-track a{color:var(--accent);text-decoration:underline}
+
+/* animation */
+@keyframes marquee-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-track{animation:marquee-left 18s linear infinite}
+
+/* Pause animation for users preferring reduced motion */
+@media (prefers-reduced-motion: reduce){
+	.marquee-track{animation:none}
+}
+
+/* Ensure marquee content doubles so the scroll is continuous on wide screens */
+.marquee-track span{min-width:0}
+
+

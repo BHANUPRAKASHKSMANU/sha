@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GM University BCA — Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="nav">
+        <script>
+            try {
+                var u = localStorage.getItem('gmu-user');
+                if (!u) { window.location.href = 'login.html'; }
+            } catch (e) {}
+        </script>
+
+        <div class="container">
+            <div class="logo-title">
+                <a href="index.html"><img src="images/gmulogo1.png" alt="GM University Logo" class="logo"></a>
+                <h1>GM University BCA</h1>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html" id="contact-link">Contact</a></li>
+                    <li><a href="dashboard.html">Student Portal</a></li>
+                    <li><a href="faculty-admin.html" id="faculty-header-cta" class="btn" style="margin-left:6px">Faculty Admin</a></li>
+                    <li><a href="login.html" id="auth-link">Login / Signup</a></li>
+                    <li><a href="student-activities.html">Student Activities</a></li>
+                </ul>
+
+            <!-- Welcome banner (dismissible) -->
+            <div id="home-welcome" class="welcome-banner">
+                <div class="container">
+                    <p>Welcome to GM University BCA — Explore courses, resources, blogs and student tools.</p>
+                    <button id="home-welcome-close" class="btn">Close</button>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="marquee-wrap" role="region" aria-label="Site announcements">
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>•</span>
+                <span>Welcome to GM University – Innovative Minds!  good morning🎓✨</span>
+                <span>•</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h2>Welcome to GM University BCA Blogging &amp; Learning Platform</h2>
+                    <p class="lead">
+                        A complete academic hub for notes, blogs, courses, dashboards, and student learning tools
+                    </p>
+                    <div class="hero-ctas">
+                        <a class="btn btn-outline" href="courses.html">Start Learning</a>
+                        <a class="btn btn-primary" href="faculty-admin.html" id="faculty-cta" style="margin-left:8px">Faculty Admin</a>
+                        <a class="btn btn-outline" href="admin.html" id="admin-cta" style="display:none;margin-left:8px">Admin Panel</a>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <img src="download.webp" alt="Learning dashboard illustration" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="container features-grid">
+            <h3 class="section-title">Education Features</h3>
+
+            <div class="grid">
+                <article class="card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.23.37_73c97167.jpg" alt="Digital Library">
+                    <h4>Digital Library</h4>
+                    <p>Access PDFs, lecture notes and previous question papers for quick revision.</p>
+                </article>
+
+                <article class="card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.26.51_85848491.jpg" alt="Online Courses">
+                    <h4>Online Courses</h4>
+                    <p>Self-paced and instructor-led courses mapped to the BCA syllabus.</p>
+                </article>
+
+                <article class="card">
+                    <img src="OIP (5).webp" alt="Faculty Uploads">
+                    <h4>Faculty Uploads</h4>
+                    <p>Official resources and slides uploaded by faculty for students.</p>
+                </article>
+
+                <article class="card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.30.39_ba03f00d.jpg" alt="Student Blogs">
+                    <h4>Student Blogs</h4>
+                    <p>Read and write student-created tutorials, experiences and projects.</p>
+                </article>
+
+                <article class="card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.33.22_8a584d93.jpg" alt="Coding Playground">
+                    <h4>Coding Playground</h4>
+                    <p>Experiment with code snippets and quick exercises in multiple languages.</p>
+                </article>
+
+                <article class="card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.46.38_308e3c4f.jpg" alt="Discussion Forums">
+                    <h4>Discussion Forums</h4>
+                    <p>Ask doubts, share solutions and collaborate with peers and faculty.</p>
+                </article>
+
+                <article class="card">
+                    <img src="WhatsApp Image 2025-11-17 at 12.04.21_1679a09e.jpg" alt="Announcements">
+                    <h4>Announcements</h4>
+                    <p>Official notices, exam schedules and important academic updates.</p>
+                </article>
+
+                <article class="card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.40.44_6d2ffccf.jpg" alt="Events Calendar">
+                    <h4>Events Calendar</h4>
+                    <p>Workshops, seminars and campus events scheduled for the semester.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="container latest-posts">
+            <h3 class="section-title">Latest Academic Posts</h3>
+
+            <div class="posts">
+                <article class="post-card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.52.33_1ba3ab1f.jpg" alt="Post 1">
+                    <div class="post-body">
+                        <h4>Understanding Relational Databases</h4>
+                        <p>Quick guide to normal forms and practical SQL queries.</p>
+                        <a class="btn btn-small" href="course.html">Read More</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="OIP (4).webp" alt="Post 2">
+                    <div class="post-body">
+                        <h4>JavaScript ES6 Features You Must Know</h4>
+                        <p>A concise walkthrough of modern JavaScript for web apps.</p>
+                        <a class="btn btn-small" href="course.html">Read More</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="WhatsApp Image 2025-11-18 at 22.55.41_782bbaec.jpg" alt="Post 3">
+                    <div class="post-body">
+                        <h4>How to Prepare for BCA Assignments</h4>
+                        <p>Study strategies and time management tips for students.</p>
+                        <a class="btn btn-small" href="course.html">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section class="container faculty-grid" aria-label="FCIT Educators & Mentor">
+        <h3 class="section-title"><b>FCIT Educators & Mentor</b></h3>
+        <div class="faculty-grid-cards">
+            <article class="faculty-mini">
+                <img src="WhatsApp Image 2025-11-18 at 23.24.59_e1056dc9.jpg" alt="Dean Swetha Marigowdar" />
+                <h5>Dean Swetha Marigowdar</h5>
+                <p class="muted">Dean — FCIT</p>
+            </article>
+            <article class="faculty-mini">
+                <img src="images/director.jpg" alt="Director Rajasekar G. C." />
+                <h5>Director Rajasekar G. C.</h5>
+                <p class="muted">Director — FCIT</p>
+            </article>
+            <article class="faculty-mini">
+                <img src="images/hod.jpg" alt="Head of Department Usha N." />
+                <h5>Head of Department Usha N.</h5>
+                <p class="muted">HOD — FCIT Department</p>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="footer-year"></span> GM University BCA | All Rights Reserved | Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <!-- 🌟 WELCOME POPUP WITH TIME GREETING 🌟 -->
+    <div id="welcome-popup" class="welcome-popup hidden">
+        <div class="welcome-box">
+            <h3 id="welcome-title">👋 Welcome!</h3>
+            <p id="welcome-text">We're glad to have you here.</p>
+            <button id="welcome-close" class="btn btn-primary">Continue</button>
+        </div>
+    </div>
+
+    <style>
+        .welcome-banner {
+            background: #fff7e6;
+            border-bottom: 3px solid #e0b84d;
+            padding: 12px 0;
+        }
+        .welcome-banner .container { display:flex; align-items:center; gap:12px; }
+        .welcome-banner p { margin:0; font-weight:600; color:#5e2b00; }
+        .welcome-banner .btn { margin-left: auto; }
+        .welcome-popup {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+        .welcome-popup.hidden {
+            display: none;
+        }
+        .welcome-box {
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+
+    <!-- 🔥 Time-based greeting added here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let seen = localStorage.getItem("gmu-welcome-seen");
+
+            if (!seen) {
+                document.getElementById("welcome-popup").classList.remove("hidden");
+            }
+
+            // TIME-BASED GREETING
+            let hour = new Date().getHours();
+            let greeting = "Welcome";
+
+            if (hour >= 5 && hour < 12) greeting = "🌅 Good Morning";
+            else if (hour >= 12 && hour < 17) greeting = "☀️ Good Afternoon";
+            else greeting = "🌙 Good Evening";
+
+            document.getElementById("welcome-title").innerText = greeting + " 👋";
+            document.getElementById("welcome-text").innerText = "Welcome to GM University BCA! Explore courses, resources, blogs, and more.";
+
+            document.getElementById("welcome-close").onclick = function () {
+                document.getElementById("welcome-popup").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("welcome-popup").classList.add("hidden");
+                }, 400);
+
+                localStorage.setItem("gmu-welcome-seen", "yes");
+            };
+        });
+    </script>
+
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var banner = document.getElementById('home-welcome');
+            if (!banner) return;
+            if (localStorage.getItem('gmu-home-welcome') === 'seen') {
+                banner.style.display = 'none';
+                return;
+            }
+            var btn = document.getElementById('home-welcome-close');
+            if (btn) btn.addEventListener('click', function (e) {
+                banner.style.display = 'none';
+                try { localStorage.setItem('gmu-home-welcome', 'seen'); } catch (ex) {}
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Panel — GMU BCA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <script>
+        try{ if(!localStorage.getItem('gmu-user')) window.location.href='login.html'; }catch(e){}
+      </script>
+      <div class="logo-title"><a href="index.html"><img src="images/gmulogo1.png" alt="GMU logo" class="logo"></a><h1>Admin Panel</h1></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- About link removed -->
+          <li><a href="courses.html">Courses</a></li>
+          <!-- Course link removed -->
+          <!-- Features link removed -->
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Student Portal</a></li>
+          <li><a href="faculty-admin.html" class="btn" style="margin-left:6px">Faculty Admin</a></li>
+          <li><a href="admin.html" class="active">Admin Panel</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Signup</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Admin Menu</h3>
+        <a href="#users">Manage Students</a>
+        <a href="#faculty">Manage Faculty</a>
+        <a href="#courses">Manage Courses</a>
+        <a href="#materials">Upload Materials</a>
+        <a href="#announcements">Announcements</a>
+        <a href="#posts">Approve Blog Posts</a>
+        <a href="#stats">Website Stats</a>
+      </aside>
+
+      <section class="main-panel">
+        <div class="widget-row">
+          <div class="widget">
+            <h4>Users</h4>
+            <p>Students: 1,250 | Faculty: 45</p>
+          </div>
+          <div class="widget">
+            <h4>Courses</h4>
+            <p>Total: 42 | Active this semester: 12</p>
+          </div>
+          <div class="widget">
+            <h4>Uploads</h4>
+            <p>Materials waiting approval: 6</p>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4 id="users">Manage Students</h4>
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Rohit Kumar</td><td>rohit@example.com</td><td>Active</td></tr>
+              <tr><td>Sita Sharma</td><td>sita@example.com</td><td>Pending</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="widget">
+          <h4 id="stats">Website Statistics</h4>
+          <p>Basic analytics cards and charts can go here (placeholder).</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container"><p>&copy; <span id="footer-year"></span> GM University BCA</p></div></footer>
+  <script src="scripts.js"></script>
+</body>
+</html>

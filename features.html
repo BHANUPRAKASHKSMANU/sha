@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Features - BCA Blog</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+<header class="nav">
+    <div class="container">
+        <div class="logo-title">
+            <a href="index.html"><img src="images/gmulogo1.png" alt="GM University Logo" class="logo" /></a>
+            <h1>BCA Blog</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- About link removed -->
+                <li><a href="courses.html">Courses</a></li>
+                <!-- Course link removed -->
+                <!-- Features nav removed -->
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard.html">Student Portal</a></li>
+                <li><a href="faculty-admin.html" class="btn" style="margin-left:6px">Faculty Admin</a></li>
+                <li><a href="admin.html" class="btn" style="display:none;margin-left:6px">Admin Panel</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="hero">
+<div class="container">
+<h2>Platform Features</h2>
+<p>Everything you need for <strong>technical blogging</strong></p>
+</div>
+</div>
+<div class="container">
+<div class="filter-buttons" style="text-align: center; margin-bottom: 20px;">
+    <button onclick="filterContent('all')" style="padding: 10px 20px; background-color: #D4AF37; color: #5e1d1d; border: none; cursor: pointer; margin: 5px; border-radius: 5px;">All</button>
+    <button onclick="filterContent('Programming')" style="padding: 10px 20px; background-color: #D4AF37; color: #5e1d1d; border: none; cursor: pointer; margin: 5px; border-radius: 5px;">Programming</button>
+    <button onclick="filterContent('Web-Development')" style="padding: 10px 20px; background-color: #D4AF37; color: #5e1d1d; border: none; cursor: pointer; margin: 5px; border-radius: 5px;">Web Development</button>
+    <button onclick="filterContent('Database')" style="padding: 10px 20px; background-color: #D4AF37; color: #5e1d1d; border: none; cursor: pointer; margin: 5px; border-radius: 5px;">Database</button>
+</div>
+<div class="feature-list content-card Programming">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Code editor" />
+<h3>Rich Code Editor</h3>
+<ul>
+<li>Syntax highlighting for 50+ languages</li>
+<li>Markdown support</li>
+<li>Live preview</li>
+<li>Code snippets library</li>
+</ul>
+</div>
+<h3 class="section-title">Feature Comparison</h3>
+<table>
+<tr><th>Feature</th><th>Free</th><th>Premium</th></tr>
+<tr><td>Rich Text Editor</td><td>&#x2713;</td><td>&#x2713;</td></tr>
+<tr><td>Code Highlighting</td><td>&#x2713;</td><td>&#x2713;</td></tr>
+<tr><td>Custom Domain</td><td>&#x2717;</td><td>&#x2713;</td></tr>
+<tr><td>Analytics</td><td>&#x2717;</td><td>&#x2713;</td></tr>
+</table>
+<h3 class="section-title">Blog Categories</h3>
+<ol class="tech-list">
+<li class="content-card Web-Development">Web Development (HTML, CSS, JavaScript)</li>
+<li class="content-card Database">Database Systems (SQL, NoSQL)</li>
+<li class="content-card Mobile">Mobile App Development</li>
+<li class="content-card Software">Software Engineering</li>
+</ol>
+</div>
+<div class="footer">
+<p>&copy; <span id="footer-year"></span> GM University BCA | All Rights Reserved | Last Modified: <span id="last-modified"></span></p>
+</div>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

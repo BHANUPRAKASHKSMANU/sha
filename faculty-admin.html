@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Faculty Admin — GM University BCA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="logo-title">
+        <a href="index.html"><img src="images/gmulogo1.png" alt="GM University Logo" class="logo"></a>
+        <h1>Faculty Admin</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- About link removed -->
+          <li><a href="courses.html">Courses</a></li>
+          <!-- Course link removed -->
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Student Portal</a></li>
+          <li><a href="faculty-admin.html" class="active">Faculty Admin</a></li>
+          <li><a href="admin.html" class="btn" style="display:none;margin-left:6px">Admin Panel</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Signup</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+          <button type="submit" class="btn">Create Password</button>
+  <main class="container">
+    <section class="card">
+      <h2 id="fa-heading">Faculty Admin Access</h2>
+      <div id="fa-setup">
+        <p>If this is the first time, create a password for the faculty admin area (stored locally in your browser).</p>
+        <form id="faculty-pass-form">
+          <label for="faculty-pass">New Password</label>
+          <input id="faculty-pass" type="password" autocomplete="new-password">
+          <label for="faculty-pass-confirm">Confirm Password</label>
+          <input id="faculty-pass-confirm" type="password" autocomplete="new-password">
+          <button type="submit" class="btn">Login</button>
+        </form>
+      </div>
+
+      <div id="fa-login" style="display:none;">
+        <p>Enter faculty admin password to access contact exports.</p>
+        <form id="faculty-login-form">
+          <label for="faculty-pass-input">Password</label>
+          <input id="faculty-pass-input" type="password" autocomplete="current-password">
+          
+        </form>
+      </div>
+
+      <div id="fa-panel" style="display:none;">
+        <p>Welcome, Faculty Admin. Use the controls below.</p>
+        <div class="tabs" style="margin-top:12px;">
+          <button id="tab-contacts" class="btn">Student Contacts</button>
+          <button id="tab-marks" class="btn">Student Marks</button>
+        </div>
+
+        <div id="panel-contacts" style="margin-top:12px;">
+          <p class="muted">View or export student contact submissions.</p>
+          <p>
+            <button id="fa-export" class="btn btn-primary">Export Contacts CSV</button>
+            <a href="index.html" id="fa-go-home" class="btn" style="margin-left:10px">Faculty Admin Home</a>
+          </p>
+          <div class="card" style="margin-top:12px;overflow:auto;">
+            <table id="contacts-table" style="width:100%;border-collapse:collapse">
+              <thead>
+                <tr style="background:#f6f6f6"><th style="padding:8px;border:1px solid #eee">Name</th><th style="padding:8px;border:1px solid #eee">Email</th><th style="padding:8px;border:1px solid #eee">Phone</th><th style="padding:8px;border:1px solid #eee">Subject</th><th style="padding:8px;border:1px solid #eee">Message</th><th style="padding:8px;border:1px solid #eee">Submitted At</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="panel-marks" style="display:none;margin-top:12px;">
+          <p class="muted">Add, view and export student marks.</p>
+          <form id="marks-form" class="auth-card" style="max-width:820px;padding:12px;">
+            <div class="form-row">
+              <div>
+                <label for="m-student">Student Name</label>
+                <input id="m-student" type="text" />
+              </div>
+              <div>
+                <label for="m-roll">Roll Number</label>
+                <input id="m-roll" type="text" />
+              </div>
+            </div>
+            <div class="form-row" style="margin-top:10px">
+              <div>
+                <label for="m-course">Course</label>
+                <input id="m-course" type="text" />
+              </div>
+              <div>
+                <label for="m-marks">Marks</label>
+                <input id="m-marks" type="number" />
+              </div>
+            </div>
+            <div style="margin-top:10px">
+              <button id="m-add" class="btn btn-primary">Add / Save</button>
+              <button id="m-export" class="btn" style="margin-left:8px">Export Marks CSV</button>
+            </div>
+          </form>
+
+          <div class="card" style="margin-top:12px;overflow:auto;">
+            <table id="marks-table" style="width:100%;border-collapse:collapse">
+              <thead>
+                <tr style="background:#f6f6f6"><th style="padding:8px;border:1px solid #eee">Name</th><th style="padding:8px;border:1px solid #eee">Roll</th><th style="padding:8px;border:1px solid #eee">Course</th><th style="padding:8px;border:1px solid #eee">Marks</th><th style="padding:8px;border:1px solid #eee">Saved At</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <p style="margin-top:12px">
+          <button id="fa-logout" class="btn">Logout</button>
+        </p>
+        <p id="fa-message" class="muted"></p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year"></span> GM University BCA</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+    <script>
+    // On this page, wire up faculty admin forms if scripts.js helper functions exist
+    (function(){
+      try {
+        var setup = document.getElementById('fa-setup');
+        var login = document.getElementById('fa-login');
+        var panel = document.getElementById('fa-panel');
+        var heading = document.getElementById('fa-heading');
+
+        function showSetup() { setup.style.display='block'; login.style.display='none'; panel.style.display='none'; }
+        function showLogin() { setup.style.display='none'; login.style.display='block'; panel.style.display='none'; }
+        function showPanel() { setup.style.display='none'; login.style.display='none'; panel.style.display='block'; }
+
+        // enforce: only allow faculty/admin users to access/create the faculty password
+        var rawUser = localStorage.getItem('gmu-user');
+        var userObj = null;
+        try { userObj = rawUser ? JSON.parse(rawUser) : null; } catch(e) { userObj = null; }
+        var isFacultyUser = !!(userObj && (userObj.role === 'faculty' || userObj.isAdmin));
+
+        if (!isFacultyUser) {
+          // block access for students/anonymous users
+          if (setup) setup.style.display = 'none';
+          if (login) login.style.display = 'none';
+          if (panel) panel.style.display = 'none';
+          heading.textContent = 'Access Restricted';
+          var msg = document.createElement('p');
+          msg.id = 'fa-restrict-msg';
+          msg.className = 'muted';
+          msg.innerHTML = 'This area is restricted to faculty only. Please <a href="login.html">login as faculty</a> to continue.';
+          var parent = document.querySelector('main .card');
+          if (parent && !document.getElementById('fa-restrict-msg')) parent.insertBefore(msg, parent.children[1] || null);
+          return;
+        }
+
+        // At this point the logged-in user is faculty/admin — allow setup/login/panel flow
+        var pass = localStorage.getItem('gmu-faculty-pass');
+        if (!pass) showSetup(); else showLogin();
+
+        var passForm = document.getElementById('faculty-pass-form');
+        if (passForm) {
+          passForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            var a = document.getElementById('faculty-pass').value || '';
+            var b = document.getElementById('faculty-pass-confirm').value || '';
+            if (!a) { alert('Enter a password'); return; }
+            if (a !== b) { alert('Passwords do not match'); return; }
+            try { localStorage.setItem('gmu-faculty-pass', a); alert('Password saved locally. You can now login.'); showLogin(); } catch (ex) { console.warn(ex); alert('Could not save password locally.'); }
+          });
+        }
+
+        var loginForm = document.getElementById('faculty-login-form');
+        if (loginForm) {
+          loginForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            var input = document.getElementById('faculty-pass-input').value || '';
+            var stored = localStorage.getItem('gmu-faculty-pass');
+            if (!stored) { alert('No password set — create one first.'); return; }
+            if (input === stored) {
+              // set a short-lived flag to mark faculty auth
+              try { localStorage.setItem('gmu-faculty-auth', JSON.stringify({at:new Date().toISOString()})); } catch (ex) {}
+              showPanel();
+            } else {
+              alert('Incorrect password.');
+            }
+          });
+        }
+
+        var exportBtn = document.getElementById('fa-export');
+        if (exportBtn) exportBtn.addEventListener('click', function(e){ e.preventDefault(); if (typeof exportContactsCSV === 'function') { exportContactsCSV(); } else { alert('Exporter not available'); } });
+
+        var logoutBtn = document.getElementById('fa-logout');
+        if (logoutBtn) logoutBtn.addEventListener('click', function(e){ e.preventDefault(); try { localStorage.removeItem('gmu-faculty-auth'); document.getElementById('fa-message').textContent = 'Logged out.'; showLogin(); } catch (ex){ console.warn(ex); } });
+
+        // If already authenticated, show panel
+        try { if (localStorage.getItem('gmu-faculty-auth')) { showPanel(); } } catch (e) {}
+
+        // Tab wiring and rendering hooks
+        var tabContacts = document.getElementById('tab-contacts');
+        var tabMarks = document.getElementById('tab-marks');
+        var panelContacts = document.getElementById('panel-contacts');
+        var panelMarks = document.getElementById('panel-marks');
+        if (tabContacts) tabContacts.addEventListener('click', function(){ panelContacts.style.display='block'; panelMarks.style.display='none'; renderContactsTable('contacts-table'); });
+        if (tabMarks) tabMarks.addEventListener('click', function(){ panelContacts.style.display='none'; panelMarks.style.display='block'; renderMarksTable('marks-table'); });
+
+        // ensure tables render when showing panel
+        var origShowPanel = showPanel;
+        showPanel = function(){ origShowPanel(); renderContactsTable('contacts-table'); renderMarksTable('marks-table'); };
+
+        // marks form wiring
+        var marksForm = document.getElementById('marks-form');
+        if (marksForm) {
+          marksForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            var name = (document.getElementById('m-student')||{}).value||'';
+            var roll = (document.getElementById('m-roll')||{}).value||'';
+            var course = (document.getElementById('m-course')||{}).value||'';
+            var marks = (document.getElementById('m-marks')||{}).value||'';
+            if (!name || !roll) { alert('Please enter student name and roll number.'); return; }
+            var entry = { name: name, roll: roll, course: course, marks: marks, savedAt: new Date().toISOString() };
+            if (saveMarkEntry(entry)) { alert('Marks saved.'); renderMarksTable('marks-table'); marksForm.reset(); } else { alert('Could not save marks.'); }
+          });
+        }
+
+        var mExport = document.getElementById('m-export');
+        if (mExport) mExport.addEventListener('click', function(e){ e.preventDefault(); exportMarksCSV(); });
+
+      } catch (err) { console.warn('faculty-admin init error', err); }
+    })();
+  </script>
+</body>
+</html>

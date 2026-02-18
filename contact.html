@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Contact - BCA Blog</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+<header class="nav">
+    <div class="container">
+        <div class="logo-title">
+            <a href="index.html"><img src="images/gmulogo1.png" alt="GM University Logo" class="logo" /></a>
+            <h1>BCA Blog</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- About link removed -->
+                <li><a href="courses.html">Courses</a></li>
+                <!-- Course link removed -->
+                <!-- Features link removed -->
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="dashboard.html">Student Portal</a></li>
+                <li><a href="faculty-admin.html" class="btn" style="margin-left:6px">Faculty Admin</a></li>
+                <li><a href="admin.html" class="btn" style="display:none;margin-left:6px">Admin Panel</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="hero">
+<div class="container">
+<h2>Get In Touch</h2>
+<p>Have questions? We'd love to hear from you</p>
+</div>
+</div>
+<div class="container">
+<form id="contact-form" action="submit.php" method="post">
+<div class="form-row">
+<div class="form-col">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" />
+<span id="name-error" style="color: red; display: none;">Name is required.</span>
+</div>
+<div class="form-col">
+<label for="email">Email Address</label>
+<input type="text" id="email" name="email" />
+<span id="email-error" style="color: red; display: none;">A valid email is required.</span>
+</div>
+</div>
+<label for="phone">Phone Number</label>
+<input type="text" id="phone" name="phone" />
+<span id="phone-error" style="color: red; display: none;">A valid 10-digit phone number is required.</span>
+<label for="subject">Subject</label>
+<input type="text" id="subject" name="subject" />
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="6"></textarea>
+<input type="submit" value="Send Message" />
+</form>
+<h3 class="section-title">Contact Information</h3>
+<table>
+<tr><th>Department</th><th>Details</th><th>Availability</th></tr>
+<tr><td>BCA Department</td><td>bca@gmu.ac.in</td><td>Mon-Fri 9AM-5PM</td></tr>
+<tr><td>Technical Support</td><td>blogsupport@gmu.ac.in</td><td>24/7 Online</td></tr>
+<tr><td>Campus Office</td><td>Computer Science Block, GMU Davanagere</td><td>Mon-Sat 9AM-5PM</td></tr>
+</table>
+<h3 class="section-title">University Address</h3>
+<p class="intro">GM University, Davanagere - 577006, Karnataka, India<br />
+A hub for academic prowess and personal growth, cultivating leaders and futuristic-thinkers.</p>
+</div>
+<div class="footer">
+<p>&copy; <span id="footer-year"></span> GM University BCA | All Rights Reserved | Last Modified: <span id="last-modified"></span></p>
+</div>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
